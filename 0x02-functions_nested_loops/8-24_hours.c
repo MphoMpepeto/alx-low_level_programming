@@ -2,10 +2,7 @@
 
 /**
  * jack_bauer - a function that computes the time of day
- * @a: funtion variable
- * @b: variable
- * @c: variable
- * @d: variable
+ * @a, b, c, d: function variables
  * Return: Alway 0
  */
 void jack_bauer(void)
