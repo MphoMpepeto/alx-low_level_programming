@@ -1,11 +1,24 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * _strcat - a funtion that joins two strings
- *
- * Remain: a pointer to the resulting string
+ * _strncat - a funtion that joins two strings
+ * @src: source string
+ * @dest: destination string
+ * @n: integer variable
+ * Return: a pointer to the resulting string
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
+	int len = strlen(dest);
+	int b;
 
+	for (b = 0; b < n && *src != '\0'; b++)
+	{
+		dest[len + b] = src[b];
+		src++;
+	}
+	dest[len + b] = '\0';
+	return (dest);
+}
