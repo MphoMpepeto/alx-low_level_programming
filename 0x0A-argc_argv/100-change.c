@@ -48,6 +48,13 @@ int min_coins(int cents)
 	return (coins);
 }
 
+/**
+ * main - a function that count change
+ * @argc: counts the number of argumnets
+ * @argv: the array of arguments
+ * Return: 0 when successful
+ */
+
 int main(int argc, char *argv[])
 {
 	int coins;
