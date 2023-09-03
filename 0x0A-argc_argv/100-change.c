@@ -2,37 +2,22 @@
 #include <stdlib.h>
 
 /**
- * main - prints the min number of coins to make change for an amount
- * @argc: conts the number of arguments
- * @argv: a vector that stores the argument itself
+ * min_coins - prints the min number of coins to make change for an amount
+ * @cents: the amount of change
  * Return: 0 if successful
  */
 
-int main(int argc, char *argv[])
+int min_coins(int cents)
 {
-	int cents;
+	int cent_25 = 0;
+	int cent_10 = 0;
+	int cent_5 = 0;
+	int cent_2 = 0;
+	int cent_1 = 0;
 	int coins;
-	int cent_25;
-	int cent_10;
-	int cent_5;
-	int cent_2;
-	int cent_1;
-
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	cents = atoi(argv[1]);
-
-	if (cents < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-	cent_25 = 0, cent_10 = 0, cent_5 = 0, cent_2 = 0, cent_1 = 0;
 
 	while (cents > 0)
+	{
 		if (cents >= 25)
 		{
 			cents -= 25;
@@ -58,7 +43,29 @@ int main(int argc, char *argv[])
 			cents -= 1;
 			cent_1++;
 		}
+	}
 	coins = cent_25 + cent_10 + cent_5 + cent_2 + cent_1;
+	return (coins);
+}
+
+int main(int argc, char *argv[])
+{
+	int coins;
+	int cents;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	cents = atoi(argv[1]);
+
+	if (cents < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	coins = min_coins(cents);
 	printf("%d\n", coins);
 	return (0);
 }
