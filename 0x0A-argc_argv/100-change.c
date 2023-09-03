@@ -39,17 +39,26 @@ int main(int argc, char *argv[])
 			cent_25++;
 		}
 		else if (cents >= 10)
+		{
 			cents -= 10;
 			cent_10++;
+		}
 		else if (cents >= 5)
+		{
 			cents -= 5;
 			cent_5++;
+		}
 		else if (cents >= 2)
+		{
 			cents -= 2;
 			cent_2++;
+		}
 		else
+		{
 			cents -= 1;
 			cent_1++;
+		}
 	coins = cent_25 + cent_10 + cent_5 + cent_2 + cent_1;
 	printf("%d\n", coins);
+	return (0);
 }
