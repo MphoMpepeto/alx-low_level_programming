@@ -8,4 +8,15 @@
  * Return: 1 if successful or -1 if failure
  */
 
- int set_bit(unsigned long int *n, unsigned int index)
+int set_bit(unsigned long int *n, unsigned int index)
+{
+	unsigned long int x;
+
+	if ((index >= sizeof(unsigned long int) * 8) || (n == NULL))
+	{
+		return (-1);
+	}
+	x = 1UL << index;
+	*n |= x;
+	return (1);
+}
