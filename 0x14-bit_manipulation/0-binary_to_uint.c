@@ -9,26 +9,27 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int converted = 0;
-	int i;
+	unsigned int i, x, y, exp, converted = 0;
+	int base;
+
+	base = 2;
+	exp = 1;
 
 	if (b == NULL)
 		return (0);
-
 	for (i = 0; b[i] != '\0'; i++)
+		;
+	if (i == '1' && (b[0] == '0' || b[0] == '1'))
+		return (b[0] - 48);
+	for (x = 0; b[x] != '\0'; x++)
 	{
-		char x = b[i];
-
-		if (x == '0')
-		{
-			converted = converted << 1;
-		}
-		else if (x == '1')
-		{
-			converted = (converted << 1) | 1;
-		}
-		else
-			return (0);
+		if (b[x] != '0' && b[x] != '1')
+		return (0);
+		for (y = i - 1; y > 0; y--)
+		exp = exp * base;
+		converted = converted + (exp * (b[x] - 48));
+		i--;
+		exp = 1;
 	}
 	return (converted);
 }
