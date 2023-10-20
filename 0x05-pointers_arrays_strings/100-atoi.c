@@ -9,6 +9,6 @@
 int _atoi(char *s)
 
 { 
-	char *s;
+	int g = 0;
 
 }
